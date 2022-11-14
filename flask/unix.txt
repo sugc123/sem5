@@ -1,0 +1,182 @@
+cmp -l f1 f2 | wc -l
+2y file ma alag alag ketla character che te batave.
+
+
+sed  -n 's/[]\{2, \}''gp' emp.sh
+2 k vadhu space hashe tene badline 1 j space kari nakhshe.
+
+
+sed 's/unix/linux' emp.sh
+emp name ni file ma jya jya unix hashe tya linux kari deshe.
+
+
+sed '/^$/d' emp.sh
+emp name ni file ma jya blank line hasge te remove karshe.
+
+
+sed 's/ // g' emp.sh
+emp name ni file ma jetli space hashe te remove karshe
+
+
+grep -l 'a' *
+pwd ni jetli file ma A hasge te display karshe
+
+
+ls -l | grep -c "^d"
+jetli directory D thi chaltu thay te count karshe
+
+
+
+sed -n '1,3p' emp.sh |head -n 3 emp.sh
+file ni 1 thi 3 lines print krshe
+
+
+oddEven
+
+echo "-----Even or Odd in shell script-------"
+echo "Enter a number:"
+read num
+echo -n "Result:"
+if [ `expr $num % 2` == 0 ]
+then
+        echo "$num is even"
+else
+        echo "$num is odd"
+fi
+
+
+
+
+gross Salary
+
+echo "enter the basic salary:"
+read bsal
+if [ $bsal -lt 1500 ]
+then
+gsal=$((bsal+((bsal/100)*10)+(bsal/100)*90))
+echo "The gross salary : $gsal"
+fi
+if [ $bsal -ge 1500 ]
+then
+gsal=$(((bsal+500)+(bsal/100)*98))
+echo "the gross salary : $gsal"
+fi
+
+
+palindrom
+
+echo "Enter the number"
+read n
+function pal
+{
+number=$n
+reverse=0
+while [ $n -gt 0 ]
+do
+a=`expr $n % 10 `
+n=`expr $n / 10 `
+reverse=`expr $reverse \* 10 + $a`
+done
+echo $reverse
+if [ $number -eq $reverse ]
+then
+    echo "Number is palindrome"
+else
+    echo "Number is not palindrome"
+fi
+}
+r=`pal $n`
+echo "$r"
+
+
+
+mathOperation
+
+echo -n "Enter the Number1 :"
+read no1
+echo -n "Enter the Number2 :"
+read no2
+echo "----Arithmatic Operation----"
+echo "Press 1 for addition"
+echo "Press 2 for Substraction"
+echo "Press 3 for Multipliaction"
+echo "Press 4 for Divison"
+echo "Enter the Choice :"
+read ch
+
+case $ch in
+        1)
+                add=`expr $no1 + $no2`
+                #add=$((  $no1 + $no2 ))
+                echo "Addition is : $add"
+        ;;
+        2)
+                sub=`expr $no1 - $no2`
+                #sub=$((  $no1 - $no2 ))
+                echo "Substraction is : $sub"
+        ;;
+        3)
+                mul=`expr $no1 \* $no2`
+                echo "Multiplication is : $mul"
+        ;;
+        4)
+                div=`expr $no1 / $no2`
+                echo "Divison is : $div"
+        ;;
+esac
+
+vovels
+
+echo "Entre a string to find the number of Vowels "
+read st
+len=`expr $st | wc -c`
+len=`expr $len - 1`
+count=0
+while [ $len -gt 0 ]
+do
+ch=`expr $st | cut -c $len`
+
+case $ch in
+[aeiou,AEIOU]) count=`expr $count + 1` ;;
+esac
+
+len=`expr $len - 1`
+done
+echo "Number of vowels in the give string is $count"
+
+
+
+armstrngNumber
+
+echo "Enter a number: "
+read c
+x=$c
+sum=0
+r=0
+n=0
+while [ $x -gt 0 ]
+do
+r=`expr $x % 10`
+n=`expr $r \* $r \* $r`
+sum=`expr $sum + $n`
+x=`expr $x / 10`
+done
+if [ $sum -eq $c ]
+then
+echo "It is an Armstrong Number."
+else
+echo "It is not an Armstrong Number."
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+

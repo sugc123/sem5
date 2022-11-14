@@ -1,0 +1,10 @@
+folder Flask banavo 
+cmd open karvanu
+py -m pip install virtualenv
+py -3 -m venv app
+app\Scripts\activate
+pip install flask
+
+
+app\Scripts\activate
+flask run
